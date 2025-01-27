@@ -1,6 +1,5 @@
 package com.tka.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,26 +11,27 @@ import com.tka.entity.CustomerInfo;
 @Service
 public class CustomerService {
 	
-	
 	@Autowired
-	 CustomerDao customerDao;
+	CustomerDao customerDao;
 	
-	
-
 	// Fetch all customers
     public List<CustomerInfo> getAllCustomers1() {
         return customerDao.findAll(); // Delegate to DAO
     }
-	 public void addCustomer(CustomerInfo customerInfo) {
-	        CustomerInfo savedCustomer = customerDao.save(customerInfo);
-	        System.out.println("Service Layer: Saved Customer: " + savedCustomer);
-	    }
 
+	// Add a new customer
+	public void addCustomer(CustomerInfo customerInfo) {
+		CustomerInfo savedCustomer = customerDao.save(customerInfo);
+		System.out.println("Service Layer: Saved Customer: " + savedCustomer);
+	}
 
-
-//	public List<CustomerInfo> getAllCustomers() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-
+	// Update customer by ID
+	public boolean updateCustomer(int customerId, CustomerInfo updatedCustomerInfo) {
+		return customerDao.updateCustomer(customerId, updatedCustomerInfo); // Delegate to DAO
+	}
+	
+	// Delete customer by ID
+    public boolean deleteCustomer(int id) {
+        return customerDao.deleteCustomer(id); // Delegate to DAO layer
+    }
 }
