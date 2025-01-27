@@ -18,13 +18,20 @@ public class CustomerService {
 	
 	
 
-//	 public List<CustomerInfo> getAllCustomers() {
-//	        return customerDao.findAll(); 
-//	    }
-
+	// Fetch all customers
+    public List<CustomerInfo> getAllCustomers1() {
+        return customerDao.findAll(); // Delegate to DAO
+    }
 	 public void addCustomer(CustomerInfo customerInfo) {
 	        CustomerInfo savedCustomer = customerDao.save(customerInfo);
 	        System.out.println("Service Layer: Saved Customer: " + savedCustomer);
 	    }
+
+
+
+	public List<CustomerInfo> getAllCustomers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

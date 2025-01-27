@@ -35,6 +35,15 @@ public class CustomerDao {
 	        session.close(); // Close the session
 	        return customerInfo; // Return the saved customer
 	    }
+
+	 public List<CustomerInfo> findAll() {
+	        Session session = factory.openSession(); // Open a Hibernate session
+	        session.beginTransaction(); // Start a transaction
+	        List<CustomerInfo> customers = session.createQuery("FROM CustomerInfo", CustomerInfo.class).list(); // Query all customers
+	        session.getTransaction().commit(); // Commit the transaction
+	        session.close(); // Close the session
+	        return customers; // Return the list of customers
+	    }
 		
 		
 	}
