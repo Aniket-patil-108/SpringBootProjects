@@ -17,14 +17,14 @@ public class CustomerDao {
 	@Autowired
 	 SessionFactory factory;
 
-//	public List<CustomerInfo> findAll() {
-//        Session session = factory.openSession();
-//        session.beginTransaction();
-//        List<CustomerInfo> customers = session.createQuery("FROM CustomerInfo", CustomerInfo.class).list();
-//        session.getTransaction().commit();
-//        session.close();
-//        return customers;
-//    }
+	public List<CustomerInfo> findAll() {
+        Session session = factory.openSession();
+        session.beginTransaction();
+        List<CustomerInfo> customers = session.createQuery("FROM CustomerInfo", CustomerInfo.class).list();
+        session.getTransaction().commit();
+        session.close();
+        return customers;
+    }
 	
 
 	 public CustomerInfo save(CustomerInfo customerInfo) {
@@ -36,14 +36,14 @@ public class CustomerDao {
 	        return customerInfo; // Return the saved customer
 	    }
 
-	 public List<CustomerInfo> findAll() {
-	        Session session = factory.openSession(); // Open a Hibernate session
-	        session.beginTransaction(); // Start a transaction
-	        List<CustomerInfo> customers = session.createQuery("FROM CustomerInfo", CustomerInfo.class).list(); // Query all customers
-	        session.getTransaction().commit(); // Commit the transaction
-	        session.close(); // Close the session
-	        return customers; // Return the list of customers
-	    }
+//	 public List<CustomerInfo> findAll() {
+//	        Session session = factory.openSession(); // Open a Hibernate session
+//	        session.beginTransaction(); // Start a transaction
+//	        List<CustomerInfo> customers = session.createQuery("FROM CustomerInfo", CustomerInfo.class).list(); // Query all customers
+//	        session.getTransaction().commit(); // Commit the transaction
+//	        session.close(); // Close the session
+//	        return customers; // Return the list of customers
+//	    }
 		
 		
 	}

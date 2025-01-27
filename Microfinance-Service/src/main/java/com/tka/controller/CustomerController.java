@@ -31,7 +31,7 @@ public class CustomerController {
     
     @GetMapping("all")
     public ResponseEntity<List<CustomerInfo>> getAllCustomers() {
-        List<CustomerInfo> customers = customerService.getAllCustomers(); 
+        List<CustomerInfo> customers = customerService.getAllCustomers1(); 
         return new ResponseEntity<>(customers, HttpStatus.OK); 
     }
 

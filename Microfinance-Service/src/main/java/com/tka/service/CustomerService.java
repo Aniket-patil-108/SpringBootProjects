@@ -29,9 +29,9 @@ public class CustomerService {
 
 
 
-	public List<CustomerInfo> getAllCustomers() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	public List<CustomerInfo> getAllCustomers() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 }
